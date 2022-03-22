@@ -11,3 +11,17 @@ In this Project, I analyzed the price trends for the properties in Kuala Lumpur.
 [Project Blog Post : Kuala Lumpur — The Property Price Trends](https://medium.com/@abbasali.io/kuala-lumpur-the-property-price-trends-354a355bd2a)
 
 [Project Notebook : Kuala Lumpur The Property Price Trends](https://github.com/abbasali-io/ali-dsnd/blob/main/1-%20Write%20Data%20Science%20Blog/kuala_lumpur_data_analysis.ipynb)
+
+### Project 2 - Creating a Disaster Response Pipeline
+
+**Description:**
+
+In this Project, I created an ETL pipeline for data transformation and a Machine Learning pipeline to classify the messages into multiple classes. The pipeline build a model which is used in a Flask application. The application is deployed at servers to be used by the disaster management staff, by putting in a tweeted message and getting categories that can be related to the message. Moving forward the model can be part of an automated pipeline to detect the required categories of tweets automatically and respond to the emergency workers as required. The project notebooks and deployed appoication can be found below:
+
+[Project Github Link ]()
+
+[Project Deployed App : Disaster Response Application]()
+
+[Project Notebooks : Data ETL Notebook]()
+
+[Project Notebooks : Machine Learning Pipeline Notebook]()
