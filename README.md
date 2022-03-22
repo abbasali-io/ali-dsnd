@@ -18,10 +18,10 @@ In this Project, I analyzed the price trends for the properties in Kuala Lumpur.
 
 In this Project, I created an ETL pipeline for data transformation and a Machine Learning pipeline to classify the messages into multiple classes. The pipeline build a model which is used in a Flask application. The application is deployed at servers to be used by the disaster management staff, by putting in a tweeted message and getting categories that can be related to the message. Moving forward the model can be part of an automated pipeline to detect the required categories of tweets automatically and respond to the emergency workers as required. The project notebooks and deployed appoication can be found below:
 
-[Project Github Link ]()
+[Project Github Link ](https://github.com/abbasali-io/ali-dsnd/tree/main/2-%20Disaster%20Response%20Pipeline)
 
 [Project Deployed App : Disaster Response Application]()
 
-[Project Notebooks : Data ETL Notebook]()
+[Project Notebooks : Data ETL Notebook](https://github.com/abbasali-io/ali-dsnd/blob/main/2-%20Disaster%20Response%20Pipeline/notebooks/ETL%20Pipeline%20Preparation.ipynb)
 
-[Project Notebooks : Machine Learning Pipeline Notebook]()
+[Project Notebooks : Machine Learning Pipeline Notebook](https://github.com/abbasali-io/ali-dsnd/blob/main/2-%20Disaster%20Response%20Pipeline/notebooks/Disaster_Response_ML_Pipeline_Preperation.ipynb)
