@@ -201,4 +201,7 @@ cython_debug/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
+
 2- Disaster Response Pipeline/notebooks/random_forest_model.pkl
+2- Disaster Response Pipeline/notebooks/disaster.db
+2- Disaster Response Pipeline/data/DisasterResponse.db.db
