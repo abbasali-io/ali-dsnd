@@ -91,7 +91,7 @@ def save_data(df, database_filename):
     """
 
     # Create the database file for next steps and export
-    engine = db.create_engine('sqlite:///'+database_filename+'.db')
+    engine = db.create_engine('sqlite:///'+database_filename)
     df.to_sql('messages', engine, if_exists='replace', index=False)
 
 

@@ -35,7 +35,7 @@ def load_data(database_filepath):
        category_names : List of names for each catagorical variable
     """
 
-    engine = create_engine('sqlite:///'+database_filepath+'.db')
+    engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql("SELECT * from messages", engine)
 
     # drop the orginal column since we found out it would affect the process during the
@@ -96,15 +96,75 @@ def tokenize(text):
 
 
 def build_model():
-    pass
+    """
+    Description: 
+        Build the NLP Pipeline, convert messages to tokens, perform tf-idf, 
+        multioutput classifier and apply the best parameters using grid search
+
+    Args:
+        None
+
+    Return:
+        Cross Validated classifier object    
+    """
+    # define the machine learning pipeline
+    pipeline = Pipeline(
+        [
+            ('vect', CountVectorizer(tokenizer=tokenize)),
+            ('tfidf', TfidfTransformer()),
+            ('classifier', (RandomForestClassifier(n_jobs=-1)))
+        ]
+    )
+
+    # Apply parameters that searched earlier
+    parameters = {'clf__estimator__max_features': [
+        'sqrt', 0.5], 'clf__estimator__n_estimators': [50, 100]}
+
+    cv = GridSearchCV(estimator=pipeline,
+                      param_grid=parameters, cv=5, n_jobs=-1)
+
+    return cv
+    # return pipeline
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
-    pass
+    """
+    Description:
+        Evaluate the performance of the model via a classification report
+
+    Args:
+        model: The machine learning model that require evaluation report
+        X_test: Test Data Frame for messages
+        Y_test: Test Data for categorical variables
+    """
+
+    # predict the test data took 34 sec
+    y_pred = model.predict(X_test)
+
+    # create the classification report
+    class_rept = classification_report(
+        Y_test, y_pred, target_names=category_names)
+
+    print(class_rept)
+
+    return
 
 
 def save_model(model, model_filepath):
-    pass
+    """
+    Description: 
+        Save model to pickle file
+
+    Args: 
+        model: The machine learning model containing learned weights
+        model_filepath: file path to save the pickle file
+
+    Return:
+        None
+    """
+
+    # Export the pipeline as a model
+    pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():

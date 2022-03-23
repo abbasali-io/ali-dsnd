@@ -204,4 +204,5 @@ cython_debug/
 
 2- Disaster Response Pipeline/notebooks/random_forest_model.pkl
 2- Disaster Response Pipeline/notebooks/disaster.db
-2- Disaster Response Pipeline/data/DisasterResponse.db.db
+2- Disaster Response Pipeline/data/DisasterResponse.db
+2- Disaster Response Pipeline/models/classifier.pkl
