@@ -20,7 +20,7 @@ In this Project, I created an ETL pipeline for data transformation and a Machine
 
 [Project Github Link ](https://github.com/abbasali-io/ali-dsnd/tree/main/2-%20Disaster%20Response%20Pipeline)
 
-[Project Deployed App : Disaster Response Application]()
+<!-- [Project Deployed App : Disaster Response Application]() -->
 
 [Project Notebooks : Data ETL Notebook](https://github.com/abbasali-io/ali-dsnd/blob/main/2-%20Disaster%20Response%20Pipeline/notebooks/ETL%20Pipeline%20Preparation.ipynb)
 
