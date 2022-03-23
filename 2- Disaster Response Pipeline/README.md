@@ -1,9 +1,16 @@
 # Disaster Response Pipeline Project
 
+<br/><br/>
+
 ## Project Description
 
 In this Project, I created an ETL pipeline for data transformation and a Machine Learning pipeline to classify the messages into multiple classes. The pipeline build a model which is used in a Flask application. The application is deployed at servers to be used by the disaster management staff, by putting in a tweeted message and getting categories that can be related to the message. Moving forward the model can be part of an automated pipeline to detect the required categories of tweets automatically and respond to the emergency workers as required.
 
+**Disaster Application Screenshot**
+
+<!-- ![](https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png) -->
+<img src="https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png" alt="Screenshot" width="60%"/>
+<br/><br/>
 ## Project Assets
 
 The project uses following key assets;
@@ -19,6 +26,7 @@ The project uses following key assets;
 `./app/templates/\*.html`<- _Use this folder files to manipulate the html_
 
 `./app/run.py` <- _Use this file to run the program_
+<br/><br/>
 
 ## Instructions:
 
