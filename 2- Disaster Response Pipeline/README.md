@@ -37,6 +37,11 @@ The project uses following key assets;
      - `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
 2. Run the following command in the app's directory to run your web app.
-   `python run.py`
 
-3. Go to http://0.0.0.0:5000/
+   - `cd 2- Disaster Response Pipeline`
+
+   - `cd app`
+
+   - `python run.py`
+
+3. Go to http://localhost:3001/
