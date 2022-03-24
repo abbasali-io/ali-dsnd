@@ -92,6 +92,10 @@ def tokenize(text):
     # lematize verbs also to the base form
     tokens = [lemm.lemmatize(t, pos="v") for t in tokens]
 
+    # remove the stopwords from the tokens
+    st_words = list(set(stopwords.words('english')))
+    tokens = [t for t in tokens if t not in st_words]
+
     return tokens
 
 
