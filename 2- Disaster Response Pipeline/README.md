@@ -44,7 +44,7 @@ The project uses following key assets;
 
      - `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
-     - <img src="https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png" alt="Screenshot" width="60%"/>
+     - <img src="https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/machine%20learning%20model%20trained.png" alt="Screenshot" width="40%"/>
 
 2. Run the following command in the app's directory to run your web app.
 
