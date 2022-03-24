@@ -66,6 +66,10 @@ def clean_data(df):
     # drop the original 'categories' column from our dataframe `df`
     if 'categories' in df.columns:
         df.drop('categories', axis='columns', inplace=True)
+
+    # remove the non-binary values from the 'related' column
+    categories = categories[categories.related != 2]
+
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1)
 
