@@ -76,6 +76,12 @@ def clean_data(df):
     # drop duplicates
     df.drop_duplicates(inplace=True)
 
+    # Handle Null Values
+    # -- drop the 'original' column since it has a lot of null values but no usable data for our scenario
+    del df['original']
+    # -- drop the null values
+    df = df.dropna()
+
     # return the dataframe
     return df
 

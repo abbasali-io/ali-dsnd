@@ -38,14 +38,6 @@ def load_data(database_filepath):
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql("SELECT * from messages", engine)
 
-    # drop the orginal column since we found out it would affect the process during the
-    # previous data cleaning exercise
-    df = df.drop(['original'], axis=1)
-
-    # for each column, if there are values equal 2, drop the row
-    for col in df.columns[3:]:
-        df = df[df[col] < 2].dropna()
-
     X = df['message']
     Y = df.drop(['id', 'message', 'genre'], axis=1)
     category_names = Y.columns
@@ -116,19 +108,20 @@ def build_model():
         [
             ('vect', CountVectorizer(tokenizer=tokenize)),
             ('tfidf', TfidfTransformer()),
-            ('classifier', (RandomForestClassifier(n_jobs=-1)))
+            ('classifier', (RandomForestClassifier(
+                n_jobs=-1, max_features=0.5, n_estimators=100)))
         ]
     )
 
-    # Apply parameters that searched earlier
-    parameters = {'clf__estimator__max_features': [
-        'sqrt', 0.5], 'clf__estimator__n_estimators': [50, 100]}
+    # # Apply parameters that searched earlier
+    # parameters = {'clf__estimator__max_features': [
+    #     'sqrt', 0.5], 'clf__estimator__n_estimators': [50, 100]}
 
-    cv = GridSearchCV(estimator=pipeline,
-                      param_grid=parameters, cv=5, n_jobs=-1)
+    # cv = GridSearchCV(estimator=pipeline,
+    #                   param_grid=parameters, cv=5, n_jobs=-1)
 
-    return cv
-    # return pipeline
+    # return cv
+    return pipeline
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
