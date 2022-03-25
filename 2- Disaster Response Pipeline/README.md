@@ -1,6 +1,6 @@
 # Disaster Response Pipeline Project
 
-<br/><br/>
+<br/>
 
 ### Table of Contents
 
@@ -10,7 +10,7 @@
 4. [Instructions](#instructions)
 5. [Acknowledgements](#acknowledgement)
 
-<br/><br/>
+<br/>
 
 ## Project Description <a name="description"></a>
 
@@ -22,7 +22,7 @@ In this Project, I created an ETL pipeline for data transformation and a Machine
 <img src="https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png" alt="Screenshot" width="60%"/>
 <br/><br/>
 
-<br/><br/>
+<br/>
 
 ## Package Installations <a name="installation"></a>
 
@@ -46,7 +46,7 @@ The project uses following packages, you may install the packages by useing 'pip
 - joblib
 - flask
 
-<br/><br/>
+<br/>
 
 ## Project Assets <a name="assets"></a>
 
@@ -64,7 +64,7 @@ The project uses following key assets;
 
 `./app/run.py` <- _Use this file to run the program_
 
-<br/><br/>
+<br/>
 
 ## Instructions: <a name="instructions"></a>
 
@@ -94,7 +94,7 @@ The project uses following key assets;
 
 3. Go to http://localhost:3001/
 
-<br/><br/>
+<br/>
 
 ## Acknowledgements <a name="acknowledgement"></a>
 
