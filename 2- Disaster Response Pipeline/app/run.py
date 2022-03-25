@@ -3,12 +3,13 @@ import plotly
 import pandas as pd
 import joblib
 
+from collections import Counter
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 from flask import Flask
 from flask import render_template, request, jsonify
-from plotly.graph_objs import Bar
+from plotly.graph_objs import Bar, Heatmap
 from sqlalchemy import create_engine
 
 
@@ -39,20 +40,32 @@ model = joblib.load("../models/classifier.pkl")
 @app.route('/')
 @app.route('/index')
 def index():
-
+    # print(df.head())
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    # print("counts", genre_counts)
+    # print(genre_names)
+
+    # Number of Messages per Category
+    no_of_messages = df.drop(
+        ['id', 'message', 'genre', 'related'], axis=1).sum().sort_values()
+    message_types = list(no_of_messages.index)
 
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
+    # xx = ['a', 'b', 'c']
+    # yy = [100, 150, 80]
     graphs = [
         {
             'data': [
                 Bar(
                     x=genre_names,
                     y=genre_counts
+                    # x=xx,
+                    # y=yy
+
                 )
             ],
 
@@ -65,12 +78,35 @@ def index():
                     'title': "Genre"
                 }
             }
-        }
+        },
+        {
+            'data': [
+                Bar(
+                    x=no_of_messages,
+                    y=message_types,
+                    orientation='h',
+
+
+                )
+            ],
+
+            'layout': {
+                'title': 'Messages per Category',
+
+                'xaxis': {
+                    'title': "Total Messages"
+
+                },
+            }
+        },
+
     ]
 
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
+    # print("ids", ids)
+    # print("graph data - ", graphJSON)
 
     # render web page with plotly graphs
     return render_template('master.html', ids=ids, graphJSON=graphJSON)

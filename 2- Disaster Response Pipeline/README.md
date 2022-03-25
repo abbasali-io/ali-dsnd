@@ -16,6 +16,7 @@ In this Project, I created an ETL pipeline for data transformation and a Machine
 
 <!-- ![](https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png) -->
 <img src="https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png" alt="Screenshot" width="60%"/>
+<img src="https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png" alt="Screenshot" width="60%"/>
 
 ## Package Installations <a name="installation"></a>
 

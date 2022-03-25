@@ -108,14 +108,16 @@ def build_model():
         [
             ('vect', CountVectorizer(tokenizer=tokenize)),
             ('tfidf', TfidfTransformer()),
-            ('classifier', (RandomForestClassifier(
-                n_jobs=-1, max_features=0.5, n_estimators=100)))
+            ('classifier', (MultiOutputClassifier(RandomForestClassifier(
+                n_jobs=-1, max_features=0.5, n_estimators=100))))
         ]
     )
 
     # # Apply parameters that searched earlier
-    parameters = {'clf__estimator__max_features': [
-        'sqrt', 0.5], 'clf__estimator__n_estimators': [50, 100]}
+    parameters = {
+        'clf__estimator__max_features': ['sqrt', 0.5],
+        'clf__estimator__n_estimators': [50, 100]
+    }
 
     cv = GridSearchCV(estimator=pipeline,
                       param_grid=parameters, n_jobs=12)
