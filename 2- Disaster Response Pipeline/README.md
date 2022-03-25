@@ -2,7 +2,17 @@
 
 <br/><br/>
 
-## Project Description
+### Table of Contents
+
+1. [Project Description](#description)
+2. [Package Installation](#installation)
+3. [Project Assets](#assets)
+4. [Instructions](#instructions)
+5. [Acknowledgements](#acknowledgement)
+
+<br/><br/>
+
+## Project Description <a name="description"></a>
 
 In this Project, I created an ETL pipeline for data transformation and a Machine Learning pipeline to classify the messages into multiple classes. The pipeline build a model which is used in a Flask application. The application is deployed at servers to be used by the disaster management staff, by putting in a tweeted message and getting categories that can be related to the message. Moving forward the model can be part of an automated pipeline to detect the required categories of tweets automatically and respond to the emergency workers as required.
 
@@ -11,7 +21,34 @@ In this Project, I created an ETL pipeline for data transformation and a Machine
 <!-- ![](https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png) -->
 <img src="https://raw.githubusercontent.com/abbasali-io/ali-dsnd/main/2-%20Disaster%20Response%20Pipeline/Disaster_Response_Screenshot.png" alt="Screenshot" width="60%"/>
 <br/><br/>
-## Project Assets
+
+<br/><br/>
+
+## Package Installations <a name="installation"></a>
+
+The project uses following packages, you may install the packages by useing 'pip install xx' command;
+**ETL**
+
+- numpy
+- pandas
+- sqlalchemy
+
+**Machine Learning**
+
+- nltk // also download nltk packages of 'wordnet', 'punkt', 'stopwords', 'omw-1.4
+- sqlalchemy
+- sklearn
+
+**Flask App**
+
+- json
+- plotly
+- joblib
+- flask
+
+<br/><br/>
+
+## Project Assets <a name="assets"></a>
 
 The project uses following key assets;
 
@@ -26,9 +63,10 @@ The project uses following key assets;
 `./app/templates/\*.html`<- _Use this folder files to manipulate the html_
 
 `./app/run.py` <- _Use this file to run the program_
+
 <br/><br/>
 
-## Instructions:
+## Instructions: <a name="instructions"></a>
 
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -55,3 +93,10 @@ The project uses following key assets;
    - `python run.py`
 
 3. Go to http://localhost:3001/
+
+<br/><br/>
+
+## Acknowledgements <a name="acknowledgement"></a>
+
+- The starter code for the project is provided by [Udacity's Data Scientist Nano Degree program](https://www.udacity.com/course/data-scientist-nanodegree--nd025)
+- The Disaster Messages and Categories data is provided by Figure8

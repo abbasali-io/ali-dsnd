@@ -114,14 +114,14 @@ def build_model():
     )
 
     # # Apply parameters that searched earlier
-    # parameters = {'clf__estimator__max_features': [
-    #     'sqrt', 0.5], 'clf__estimator__n_estimators': [50, 100]}
+    parameters = {'clf__estimator__max_features': [
+        'sqrt', 0.5], 'clf__estimator__n_estimators': [50, 100]}
 
-    # cv = GridSearchCV(estimator=pipeline,
-    #                   param_grid=parameters, cv=5, n_jobs=-1)
+    cv = GridSearchCV(estimator=pipeline,
+                      param_grid=parameters, n_jobs=12)
 
-    # return cv
-    return pipeline
+    return cv
+    # return pipeline
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
